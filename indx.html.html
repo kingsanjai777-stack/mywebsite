@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- 🔥 MOST IMPORTANT (mobile fix) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Love 💖</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Image */
+img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ff4d6d;
+}
+
+/* Title */
+h1 {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+/* Button */
+button {
+  padding: 12px 30px;
+  background: #ff1e56;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  color: red;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 🔥 Image (name match pannanum) -->
+<img src="sanjai.jpg.jpg">
+
+<h1>My Love Website 💖</h1>
+
+<button onclick="playMusic()">Click Me 💘</button>
+
+<!-- 🔥 Song -->
+<audio id="song" loop>
+  <source src="song.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+  document.getElementById("song").play();
+}
+
+/* Heart rain */
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.innerHTML = "💖";
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
